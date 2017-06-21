@@ -1,15 +1,15 @@
-package io.github.xinyangpan.spring.data.restdemo.bo;
+package io.github.xinyangpan.spring.data.restdemo.vo;
 
 import io.github.xinyangpan.spring.data.restdemo.po.UserPo;
 
-public class UserBo {
+public class UserVo {
 	private UserPo userPo;
 	private String password;
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("UserBo [userPo=");
+		builder.append("UserVo [userPo=");
 		builder.append(userPo);
 		builder.append(", password=");
 		builder.append(password);
