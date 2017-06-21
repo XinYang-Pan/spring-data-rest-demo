@@ -21,7 +21,7 @@ public class UserController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST, headers = "content-type=application/json")
 	public UserPo login(@RequestBody @Valid LoginVo loginVo) {
-		UserPo userPo = userRepository.findByUserNameAndPassword(loginVo.getUserName(), loginVo.getPassword());
+		UserPo userPo = userRepository.findByUsernameAndPassword(loginVo.getUserName(), loginVo.getPassword());
 		if (userPo != null) {
 			return userPo;
 		} else {

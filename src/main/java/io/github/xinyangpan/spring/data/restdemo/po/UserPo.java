@@ -18,7 +18,7 @@ public class UserPo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	private String userName;
+	private String username;
 	@JsonIgnore
 	private String password;
 	private Gender gender;
@@ -37,7 +37,7 @@ public class UserPo {
 		builder.append("UserPo [id=");
 		builder.append(id);
 		builder.append(", userName=");
-		builder.append(userName);
+		builder.append(username);
 		builder.append(", password=");
 		builder.append(password);
 		builder.append(", gender=");
@@ -62,12 +62,12 @@ public class UserPo {
 		this.id = id;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String userName) {
+		this.username = userName;
 	}
 
 	public String getPassword() {

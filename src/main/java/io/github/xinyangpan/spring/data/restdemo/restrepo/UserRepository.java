@@ -13,6 +13,6 @@ public interface UserRepository extends PagingAndSortingRepository<UserPo, Long>
 
 	List<UserPo> findByLastName(@Param("lastName") String lastName);
 
-	UserPo findByUserNameAndPassword(@Param("userName") String userName, @Param("password") String password);
+	UserPo findByUsernameAndPassword(@Param("userName") String userName, @Param("password") String password);
 
 }
