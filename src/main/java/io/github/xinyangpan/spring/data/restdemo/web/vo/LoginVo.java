@@ -1,4 +1,4 @@
-package io.github.xinyangpan.spring.data.restdemo.vo;
+package io.github.xinyangpan.spring.data.restdemo.web.vo;
 
 import org.hibernate.validator.constraints.NotEmpty;
 

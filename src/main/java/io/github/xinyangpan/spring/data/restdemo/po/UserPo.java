@@ -9,6 +9,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.github.xinyangpan.spring.data.restdemo.core.enums.Gender;
+
 @Entity
 public class UserPo {
 
@@ -19,6 +21,7 @@ public class UserPo {
 	private String userName;
 	@JsonIgnore
 	private String password;
+	private Gender gender;
 
 	@NotEmpty
 	private String firstName;
@@ -37,6 +40,8 @@ public class UserPo {
 		builder.append(userName);
 		builder.append(", password=");
 		builder.append(password);
+		builder.append(", gender=");
+		builder.append(getGender());
 		builder.append(", firstName=");
 		builder.append(firstName);
 		builder.append(", lastName=");
@@ -103,6 +108,14 @@ public class UserPo {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
 	}
 
 }
