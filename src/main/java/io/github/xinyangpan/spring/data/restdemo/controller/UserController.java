@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.github.xinyangpan.spring.data.restdemo.bo.UserBo;
 import io.github.xinyangpan.spring.data.restdemo.po.UserPo;
 import io.github.xinyangpan.spring.data.restdemo.restrepo.UserRepository;
 
@@ -27,7 +28,9 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST, headers = { "content-type=application/json" })
-	public UserPo register(@RequestBody UserPo userPo) {
+	public UserPo register(@RequestBody UserBo UserBo) {
+		UserPo userPo = UserBo.getUserPo();
+		userPo.setPassword(UserBo.getPassword());
 		return userRepository.save(userPo);
 	}
 

@@ -1,4 +1,4 @@
-package io.github.xinyangpan.spring.data.restdemo;
+package io.github.xinyangpan.spring.data.restdemo.bo;
 
 import io.github.xinyangpan.spring.data.restdemo.po.UserPo;
 
