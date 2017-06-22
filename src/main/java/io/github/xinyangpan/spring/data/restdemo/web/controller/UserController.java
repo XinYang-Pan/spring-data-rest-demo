@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.github.xinyangpan.spring.data.restdemo.core.WrongUsernameOrPasswordException;
 import io.github.xinyangpan.spring.data.restdemo.po.UserPo;
 import io.github.xinyangpan.spring.data.restdemo.restrepo.UserRepository;
 import io.github.xinyangpan.spring.data.restdemo.web.vo.LoginVo;
@@ -21,11 +22,11 @@ public class UserController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST, headers = "content-type=application/json")
 	public UserPo login(@RequestBody @Valid LoginVo loginVo) {
-		UserPo userPo = userRepository.findByUsernameAndPassword(loginVo.getUserName(), loginVo.getPassword());
+		UserPo userPo = userRepository.findByUsernameAndPassword(loginVo.getUsername(), loginVo.getPassword());
 		if (userPo != null) {
 			return userPo;
 		} else {
-			throw new RuntimeException("wrong username/password");
+			throw new WrongUsernameOrPasswordException();
 		}
 	}
 

@@ -4,27 +4,27 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class LoginVo {
 	@NotEmpty
-	private String userName;
+	private String username;
 	@NotEmpty
 	private String password;
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("LoginVo [userName=");
-		builder.append(userName);
+		builder.append("LoginVo [username=");
+		builder.append(username);
 		builder.append(", password=");
 		builder.append(password);
 		builder.append("]");
 		return builder.toString();
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String userName) {
+		this.username = userName;
 	}
 
 	public String getPassword() {
