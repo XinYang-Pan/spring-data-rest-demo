@@ -1,5 +1,6 @@
-package io.github.xinyangpan.spring.data.restdemo.po;
+package io.github.xinyangpan.spring.data.restdemo.persistent.po;
 
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,6 +11,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import io.github.xinyangpan.spring.data.restdemo.core.enums.Gender;
+import io.github.xinyangpan.spring.data.restdemo.persistent.code.Sex;
+import io.github.xinyangpan.spring.data.restdemo.persistent.converter.GenderConverter;
+import io.github.xinyangpan.spring.data.restdemo.persistent.converter.SexConverter;
 
 @Entity
 public class UserPo {
@@ -21,7 +25,10 @@ public class UserPo {
 	private String username;
 	@JsonIgnore
 	private String password;
+    @Convert(converter = GenderConverter.class)
 	private Gender gender;
+    @Convert(converter = SexConverter.class)
+	private Sex sex;
 
 	@NotEmpty
 	private String firstName;
@@ -36,12 +43,14 @@ public class UserPo {
 		StringBuilder builder = new StringBuilder();
 		builder.append("UserPo [id=");
 		builder.append(id);
-		builder.append(", userName=");
+		builder.append(", username=");
 		builder.append(username);
 		builder.append(", password=");
 		builder.append(password);
 		builder.append(", gender=");
-		builder.append(getGender());
+		builder.append(gender);
+		builder.append(", sex=");
+		builder.append(getSex());
 		builder.append(", firstName=");
 		builder.append(firstName);
 		builder.append(", lastName=");
@@ -116,6 +125,14 @@ public class UserPo {
 
 	public void setGender(Gender gender) {
 		this.gender = gender;
+	}
+
+	public Sex getSex() {
+		return sex;
+	}
+
+	public void setSex(Sex sex) {
+		this.sex = sex;
 	}
 
 }

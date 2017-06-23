@@ -2,7 +2,7 @@ package io.github.xinyangpan.spring.data.restdemo.web.vo;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import io.github.xinyangpan.spring.data.restdemo.po.UserPo;
+import io.github.xinyangpan.spring.data.restdemo.persistent.po.UserPo;
 
 public class UserVo {
 	@NotEmpty
