@@ -20,7 +20,6 @@ import io.github.xinyangpan.spring.data.restdemo.web.vo.UserVo;
 public class UserController {
 	private static final Logger log = LoggerFactory.getLogger(UserController.class);
 
-
 	@Autowired
 	private UserRepository userRepository;
 

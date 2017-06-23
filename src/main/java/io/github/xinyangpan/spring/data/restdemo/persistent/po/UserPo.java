@@ -1,12 +1,11 @@
 package io.github.xinyangpan.spring.data.restdemo.persistent.po;
 
 import javax.persistence.Convert;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import org.hibernate.validator.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -25,15 +24,13 @@ public class UserPo {
 	private String username;
 	@JsonIgnore
 	private String password;
-    @Convert(converter = GenderConverter.class)
+	@Convert(converter = GenderConverter.class)
 	private Gender gender;
-    @Convert(converter = SexConverter.class)
+	@Convert(converter = SexConverter.class)
 	private Sex sex;
 
-	@NotEmpty
-	private String firstName;
-	@NotEmpty
-	private String lastName;
+	@Embedded
+	private Name name;
 
 	private String phone;
 	private String email;
@@ -50,11 +47,9 @@ public class UserPo {
 		builder.append(", gender=");
 		builder.append(gender);
 		builder.append(", sex=");
-		builder.append(getSex());
-		builder.append(", firstName=");
-		builder.append(firstName);
-		builder.append(", lastName=");
-		builder.append(lastName);
+		builder.append(sex);
+		builder.append(", name=");
+		builder.append(name);
 		builder.append(", phone=");
 		builder.append(phone);
 		builder.append(", email=");
@@ -75,8 +70,8 @@ public class UserPo {
 		return username;
 	}
 
-	public void setUsername(String userName) {
-		this.username = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -85,38 +80,6 @@ public class UserPo {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 
 	public Gender getGender() {
@@ -133,6 +96,30 @@ public class UserPo {
 
 	public void setSex(Sex sex) {
 		this.sex = sex;
+	}
+
+	public Name getName() {
+		return name;
+	}
+
+	public void setName(Name name) {
+		this.name = name;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

@@ -11,8 +11,8 @@ import io.github.xinyangpan.spring.data.restdemo.persistent.po.UserPo;
 @RepositoryRestResource(collectionResourceRel = "user", path = "user")
 public interface UserRepository extends PagingAndSortingRepository<UserPo, Long> {
 
-	List<UserPo> findByLastName(@Param("lastName") String lastName);
+	List<UserPo> findByUsername(@Param("username") String username);
 
-	UserPo findByUsernameAndPassword(@Param("userName") String userName, @Param("password") String password);
+	UserPo findByUsernameAndPassword(@Param("username") String userName, @Param("password") String password);
 
 }

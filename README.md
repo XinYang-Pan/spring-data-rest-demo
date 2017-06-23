@@ -3,7 +3,8 @@
 * JPA
 * RESTful, GET/POST/PUT/PATCH/DELETE
 * HAL+json
-* custom controller
-* custom exception - returning custom http status
-* po enum field
-* po code field - custom db value <-> java value converting
+* Custom controller
+* Custom exception - returning custom http status
+* Po enum field
+* Po code field - custom db value <-> java value converting
+* @Embedded
