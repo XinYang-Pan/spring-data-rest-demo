@@ -35,7 +35,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST, headers = "content-type=application/json")
-	public UserPo register(@RequestBody UserVo userVo) {
+	public UserPo register(@RequestBody @Valid UserVo userVo) {
 		log.info("register user - {}", userVo);
 		UserPo userPo = userVo.getUserPo();
 		userPo.setPassword(userVo.getPassword());
