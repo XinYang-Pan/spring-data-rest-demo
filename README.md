@@ -1,4 +1,4 @@
-# spring-data-rest-demo
+# Spring-data-rest-demo Feature List
 
 * JPA
 * RESTful, GET/POST/PUT/PATCH/DELETE
