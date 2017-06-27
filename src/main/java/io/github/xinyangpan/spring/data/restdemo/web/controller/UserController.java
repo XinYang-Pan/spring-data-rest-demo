@@ -17,6 +17,7 @@ import io.github.xinyangpan.spring.data.restdemo.web.vo.LoginVo;
 import io.github.xinyangpan.spring.data.restdemo.web.vo.UserVo;
 
 @RestController
+@RequestMapping("/user")
 public class UserController {
 	private static final Logger log = LoggerFactory.getLogger(UserController.class);
 

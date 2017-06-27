@@ -1,11 +1,13 @@
 package io.github.xinyangpan.spring.data.restdemo.web.vo;
 
+import javax.validation.constraints.NotNull;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
 import io.github.xinyangpan.spring.data.restdemo.persistent.po.UserPo;
 
 public class UserVo {
-	@NotEmpty
+	@NotNull
 	private UserPo userPo;
 	@NotEmpty
 	private String password;
